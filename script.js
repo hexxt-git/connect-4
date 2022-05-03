@@ -246,6 +246,11 @@ window.addEventListener( 'click', ()=>{
             cursor.strokeStyle = 'rgb(210, 210, 61)'
         }
 
+        // i made thse sound effects with my mouth lol
+
+        let randomSfx = random( 1, 7, true)
+        new Audio(`./sfx/pop (${randomSfx}).m4a`).play()
+
         winner = update() 
         
         if ( winner == 1){
