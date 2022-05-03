@@ -1,0 +1,54 @@
+body {
+    background-color: #151515;
+    color: #EEE;
+    font-family: monospace;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0px;
+    font-family: monospace;
+    background-color: rgb(22, 31, 43);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+canvas {
+    cursor: none;
+    background-color: rgb(37, 71, 123);
+    padding: 10px;
+    border: solid 5px rgb(23, 62, 120);
+}
+#gui {
+    cursor: none;
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    flex-direction: column;
+    gap: 10px;
+}
+#winner{
+    font-size: 50px;
+    padding: 10px 25px;
+    background: rgba(249, 252, 253, 0.8);
+    color: rgb(61, 71, 159);
+    backdrop-filter: blur(2px);
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+#restart{
+    background: rgba(249, 252, 253, 0.8);
+    backdrop-filter: blur(2px);
+    color: rgb(61, 71, 159);
+    padding: 10px 25px;
+    border-radius: 3px;
+    backdrop-filter: blur(2px);
+}
