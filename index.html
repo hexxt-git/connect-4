@@ -96,7 +96,7 @@ return `hsl( ${rdm(360)}, ${random( 20, 70, true)}%, 50%)`
 
 let canvas = $('canvas')
 let c = canvas.getContext('2d')
-// w and h are offset by - 1
+// w and h are offset by -1
 let w = 9 + 1
 let h = 9 + 1
 let a = Math.floor(window.innerHeight / h)
@@ -296,51 +296,50 @@ arr[i].push(0)
 }
 }
 
-window.addEventListener( 'click', ()=>{
-if (winner == null){
-let x = Math.floor(mouse.x/res)
-for ( let y in arr[x]){
-    if ( arr[x][y/1+1] != 0 & arr[x][y] == 0){
-        arr[x][y] = turn
-        break
+window.addEventListener( 'click', (event)=>{
+    if (winner == null){
+    let x = Math.floor(event.x/res)
+    for ( let y in arr[x]){
+        if ( arr[x][y/1+1] != 0 & arr[x][y] == 0){
+            arr[x][y] = turn
+            break
+        }
     }
-}
-if ( turn == 1){
-    turn = 2
-    cursor.fillStyle = 'rgb(167, 52, 52)'
-    cursor.strokeStyle = 'rgb(167, 52, 52)'
-}
-else{
-    turn = 1
-    cursor.fillStyle = 'rgb(210, 210, 61)'
-    cursor.strokeStyle = 'rgb(210, 210, 61)'
-}
+    if ( turn == 1){
+        turn = 2
+        cursor.fillStyle = 'rgb(167, 52, 52)'
+        cursor.strokeStyle = 'rgb(167, 52, 52)'
+    }
+    else{
+        turn = 1
+        cursor.fillStyle = 'rgb(210, 210, 61)'
+        cursor.strokeStyle = 'rgb(210, 210, 61)'
+    }
 
 // i made thse sound effects with my mouth lol
 
-let randomSfx = random( 1, 7, true)
-new Audio(`./sfx/pop (${randomSfx}).m4a`).play()
+    let randomSfx = random( 1, 7, true)
+    new Audio(`./sfx/pop (${randomSfx}).m4a`).play()
 
-winner = update() 
+    winner = update() 
 
-if ( winner == 1){
-    $('gui').innerHTML = `
-        <div id="winner">YELLOW WON</div>
-        <div id="restart">press [R] to restart</div>
-    `
-}
-if ( winner == 2){
-    $('gui').innerHTML = `
-    <div id="winner">RED WON</div>
-    <div id="restart">press [R] to restart</div>
-    `
-}
-}
-})
+    if ( winner == 1){
+        $('gui').innerHTML = `
+            <div id="winner">YELLOW WON</div>
+            <div id="restart">reload the page to restart</div>
+        `
+    }
+    if ( winner == 2){
+        $('gui').innerHTML = `
+        <div id="winner">RED WON</div>
+        <div id="restart">reload the page to restart</div>
+        `
+    }
+}})
 window.addEventListener( 'keypress', (key)=>{
-if ( key.key == 'r' ){
-document.location.reload()
-}
+    if ( key.key == 'r' ){
+        document.location.reload()
+    }
 })
 
 loop()
