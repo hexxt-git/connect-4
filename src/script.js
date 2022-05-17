@@ -211,7 +211,10 @@ function render(){
             c.beginPath()
             c.arc( i*res+res/2, a*res+res/2, res/2 - 2, 0, 8, false)
             c.fill()
-        }
+            c.font = `${res*0.75}px monospace`
+            c.fillStyle = 'rgb(37, 71, 123)'
+            c.fillText( i/1+1 , (i/1+0.28)*res, res*0.75)
+    }
     }
     cursor.render()
 }
