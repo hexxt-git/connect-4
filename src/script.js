@@ -27,8 +27,8 @@ function randomColor (){
 let canvas = $('canvas')
 let c = canvas.getContext('2d')
 // w and h are offset by - 1
-let w = 9 + 1
-let h = 9 + 1
+let w = 8 + 1
+let h = 8 + 1
 let a = Math.floor(window.innerHeight / h)
 let b = Math.floor(window.innerWidth / w)
 let res = a < b ? a : b;
